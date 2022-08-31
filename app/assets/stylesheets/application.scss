@@ -1,0 +1,14 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+div.main {
+    max-width: 800px;
+    margin: auto;
+    
+    padding: 71px;
+    border-radius: 50px;
+    background-color: antiquewhite;}
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80);
+    }

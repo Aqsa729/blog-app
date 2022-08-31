@@ -27,6 +27,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.2'
+gem 'jquery-rails', '>= 4.5.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

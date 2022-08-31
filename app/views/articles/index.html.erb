@@ -1,11 +1,8 @@
-<h1>Welcome to Blog</h1>
-<%= link_to 'About', about_path %>
-<div id="Class"><a href="http://localhost:3000/articles/new">Create New Article</a></div>
-<div id="app"></div>
-
 <h1>Listing all articles</h1>
 <p>
-<%= link_to "Create new article", new_article_path %>
+<% if logged_in? %>
+    <%= link_to "Create new article", new_article_path %>
+<% end %>
 </p>
 <table>
  <tr>
@@ -16,8 +13,14 @@
  <tr>
   <td><%= article.title %></td>
   <td><%= article.description %></td>
-  <td><%= link_to 'Edit', edit_article_path(article) %></td>
   <td><%= link_to 'Show', article_path(article) %></td>
+  <td><%= link_to 'Edit', edit_article_path(article) if current_user.id == article.user.id %></td>
+  <td>
+    <small>Created by: <%= article.user.username if article.user %>,
+    <%= time_ago_in_words(article.created_at) %> ago, 
+    last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
+  </td>
+  
  </tr>
  <% end %>
 </table>

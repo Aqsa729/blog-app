@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   root 'homepage#index'
   get 'about', to: 'homepage#about'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :articles
-  # Defines the root path route ("/")
-   #root "articles#index"
+  
+  get 'signup', to: 'users#new'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  resources :users, except: [:new]
+
+   get 'api', to:'users#api'
 end

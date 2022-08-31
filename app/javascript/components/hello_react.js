@@ -1,10 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const Hello = props => (
-  React.createElement('div', null, `Hello ${props.name}`)
+const fetchApi = async function(){
+  const response = await fetch('http://localhost:3000/api')
+  const json = await response.json();
+  console.log('fetched from react', json);
+}
+
+const Hello = props => {
+  fetchApi();
+  return React.createElement('div', null, `Hello ${props.name}`)
   // jsx not working: `<div>hi {name}<div/>`
-)
+}
 
 Hello.defaultProps = {
   name: 'David'
