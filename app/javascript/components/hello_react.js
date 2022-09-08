@@ -10,7 +10,7 @@ const fetchApi = async function(){
 const Hello = props => {
   fetchApi();
   return React.createElement('div', null, `Hello ${props.name}`)
-  // jsx not working: `<div>hi {name}<div/>`
+  
 }
 
 Hello.defaultProps = {

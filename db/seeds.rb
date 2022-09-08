@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+puts "seeding users"
+10.times {
+User.create(
+username: Faker::Internet.username,
+email: Faker::Internet.email
+)
+
+}
+ puts 'seeding articles'
+ 10.times {
+Article.create(
+title: Faker::Book.title,
+user_id: User.all.ids.sample
+
+
+)
+
+
+
+ }
